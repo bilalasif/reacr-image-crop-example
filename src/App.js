@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Imagecropper from './components/ImageCropperFunctional/ImageCropper'
+import SourceImage from './Source.jpeg'
 
 function App() {
+  const [finalURL, setFinalURL] = useState('')
+  const onPrintTargetUrlClick = (e) => {
+    e.preventDefault()
+    console.log(finalURL)
+  }
+  const onImageDestinationChange = (URL) => {
+    setFinalURL(URL)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <button onClick={onPrintTargetUrlClick}>Print TargetImage URL</button>
+      <Imagecropper src={SourceImage} onImageDestinationChange={onImageDestinationChange} />
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.img-container {
+    width: 640px;
+    height: 480px;
+    float: left;
+    object-fit: 'contain'
+
+}
+
+.img-preview {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-left: 10px;
+    object-fit: 'contain'
+
+}
